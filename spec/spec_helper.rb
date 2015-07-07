@@ -14,3 +14,9 @@ safely_require '../lib/unit'
 safely_require '../lib/footman'
 safely_require '../lib/barracks'
 safely_require '../lib/peasant'
+
+RSpec.configure do |config|
+  config.color = true
+  config.tty = true
+  config.order = "random"
+end

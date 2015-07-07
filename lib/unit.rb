@@ -7,4 +7,12 @@ class Unit
   @attack_points = ap
  end
 
+  def attack!(unit)
+    unit.damage(@attack_points)
+  end
+
+  def damage(points)
+    @health_points -= points
+  end
+
 end
