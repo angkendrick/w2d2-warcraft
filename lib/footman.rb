@@ -1,7 +1,7 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
 require_relative 'unit'
 
-class Footman
+class Footman < Unit
 
   attr_reader :health_points, :attack_power
 
@@ -10,6 +10,14 @@ class Footman
     # Also also give code outside this class access to these variables (via attr_reader, attr_writer or attr_accessor)
     @health_points = 60
     @attack_power = 10
+  end
+
+  def attack!(enemy)
+    enemy.damage(@attack_power)
+  end
+
+  def damage(points)
+    @health_points -= points
   end
 
 end
